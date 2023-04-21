@@ -1,13 +1,18 @@
-const App = ()=> {
-    const title = 'Blog Post'
-    const myBody = 'This is my Blog Post'
+import Header from "./components/Header";
+import FeedbackList from "./components/FeedbackList";
+import { useState } from "react";
+import FeedbackData from "./data/FeedbackData";
 
+const App = ()=> {
+    const [feedback, setFeedback] = useState(FeedbackData)
+        
     return(
-        <div className='container'>
-            <h1>{title}</h1>
-            <p>{myBody}</p>
-            
-        </div>
+        <>
+            <Header />
+            <div className='container'>
+                <FeedbackList feedback={feedback}/>
+            </div>
+        </>
     )
 }
 
